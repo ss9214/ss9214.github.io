@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import React from 'react';
+import Typewriter from 'typewriter-effect';
 import './App.css';
 import { AnimatedBackground } from 'animated-backgrounds';
 
 function App() {
   const [selectedSection, setSelectedSection] = useState(null);
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   const projects = [
     {
@@ -115,6 +118,30 @@ function App() {
     }
   ];
 
+  const experiences = [
+    {
+      id: 1,
+      title: "AI Engineering Intern",
+      company: "Radical AI",
+      location: "Remote",
+      description: "- Built a Retrieval-Augmented Generation Pipeline to ingest any document(s) and custom argument(s) to create custom quizzes. \n- Utilized langchain, pandas, and geminiAI to develop file loaders for 10+ different file types. \n- Utilized VertexAI, Google Cloud Platform, and VertexAI to prompt engineer embedded vertex data into custom quizzes.",
+    },
+    {
+      id: 2,
+      title: "Machine Learning Security Researcher",
+      company: "UMass Amherst",
+      location: "Amherst, MA",
+      description: "- Performed a thorough analysis of the robustness of Convolutional Neural Network Architectures against adversarial attacks.\n- Specialized in VGG-Net and ResNet, making use of tensorflow to analyze differences in structure, accuracy, and robustness.\n- Presented findings at the Undergraduate Research Night, earning the Best Undergraduate Researcher Award for my work.",
+    },
+    {
+      id: 3,
+      title: "Assistant Instructor",
+      company: "Kumon North America",
+      location: "Framingham, MA",
+      description: "- Taught kids ages 5 - 18 mathematics and literature up to calculus and advanced essay writing.\n- Worked in a team environment, learned to communicate with parents, and worked with children with mental disabilities.",
+    }
+  ];
+
   const openModal = (section) => {
     setSelectedSection(section);
     document.body.style.overflow = 'hidden';
@@ -123,6 +150,14 @@ function App() {
   const closeModal = () => {
     setSelectedSection(null);
     document.body.style.overflow = 'unset';
+  };
+
+  const openResume = () => {
+    setIsResumeOpen(true);
+  };
+
+  const closeResume = () => {
+    setIsResumeOpen(false);
   };
 
   const formatJsonContent = (content) => {
@@ -223,7 +258,20 @@ function App() {
             alt="Srihari Srivatsa" 
             className="profile-image"
           />
-          <p className="profile-caption">B.S. Computer Science at UMass Amherst</p>
+          <h2 className="profile-caption">
+            <Typewriter
+              options={{
+                strings: [
+                  'Aspiring Security Software Engineer',
+                  'B.S. Computer Science at UMass Amherst'
+                ],
+                autoStart: true,
+                loop: true,
+                delay: 75,
+                deleteSpeed: 50,
+              }}
+            />
+          </h2>
         </div>
       </header>
 
@@ -231,7 +279,7 @@ function App() {
       <section className="button-section">
         <div className="button-container">
           <a href="#about" className="big-button">About Me</a>
-          <a href="#resume" className="big-button">Resume</a>
+          <a href="#resume" className="big-button" onClick={openResume}>Resume</a>
           <a href="#experience" className="big-button">Experience</a>
           <a href="#projects" className="big-button">Projects</a>
         </div>
@@ -269,6 +317,35 @@ function App() {
           </div>
         </div>
       )}
+
+      <div id="experience">
+        <h2 className="section-title">My Experience</h2>
+        <main className="projects-grid">
+          {experiences.map(experience => (
+            <div key={experience.id} className="project-card">
+              <div className="project-image-container">
+                <h2 className="project-title" style={{ 
+                    fontSize: '2rem', 
+                    color: '#FFFFFF',
+                    textAlign: 'center',
+                    padding: '2rem'
+                  }}>
+                    <h3>{experience.title}</h3>
+                    <p>{experience.company}</p>
+                    <p>{experience.location}</p>
+                  </h2>
+              </div>
+              <div className="project-overlay">
+                  <h3>{experience.title}</h3>
+                  <p>{experience.company}</p>
+                  <p>{experience.location}</p>
+                  <p style={{fontSize:'.95rem'}}>{experience.description}</p>
+                </div>
+            </div>
+          ))}
+        </main>
+      </div>
+
       <div id="projects">
         <h2 className="section-title">My Projects</h2>
         <main className="projects-grid">
@@ -298,6 +375,29 @@ function App() {
           ))}
         </main>
       </div>
+
+      {/* Resume Modal */}
+      {isResumeOpen && (
+        <div className="modal-overlay" onClick={closeResume}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <button className="close-button" onClick={closeResume}>×</button>
+            <h2>My Resume</h2>
+            <iframe 
+            src="https://drive.google.com/file/d/1SDWcg3rvYvIb1dICCO3LARU0Nk_oOmmb/preview" 
+            width="500" height="480" title="My Resume" allow="autoplay"></iframe>
+            <a href="https://drive.google.com/uc?export=download&id=1SDWcg3rvYvIb1dICCO3LARU0Nk_oOmmb" download className="download-button">Download Resume</a>
+          </div>
+        </div>
+      )}
+
+      {/* Home Button */}
+      <a href="#" className="home-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+          <path d="M12 3l10 9h-3v9h-6v-6h-4v6H5v-9H2l10-9z"/>
+        </svg>
+      </a>
+
+
 
     </div>
   );
