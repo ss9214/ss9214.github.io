@@ -1,8 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+body {
+  margin: 0;
+  font-family: 'Montserrat', 'Helvetica', sans-serif !important; /* Use Helvetica, fallback to Arial, then sans-serif */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box; /* Optional: Add box-sizing for better layout control */
+}
+
 .App {
   text-align: center;
-  background-color: #1a1a1a;
-  min-height: 100vh;
-  color: white;
+  position: relative; /* Ensure positioning for child elements */
+  min-height: 100vh; /* Full height */
+  color: white; /* Text color */
+  overflow: hidden; /* Prevent overflow */
 }
 
 .App-logo {
@@ -28,7 +47,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #b98e18;
 }
 
 @keyframes App-logo-spin {
@@ -41,8 +60,11 @@
 }
 
 .portfolio-header {
-  padding: 2rem;
-  background-color: #2c2c2c;
+  position: relative; /* Ensure positioning for child elements */
+  padding: 4rem;
+  z-index: 1; /* Ensure it stays above the animated background */
+  padding-bottom: 1rem;
+  padding-top: 8rem;
 }
 
 .projects-grid {
@@ -58,7 +80,7 @@
   position: relative;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px #61dafb;
+  box-shadow: 0 4px 6px #b98e18;
   transition: transform 0.3s ease;
   text-align:center;
 }
@@ -66,9 +88,9 @@
 .project-image-container {
   position: relative;
   width: 100%;
-  height: 300px;  /* Same height as before when we had images */
-  background: #1e1e1e;
+  height: 350px;  /* Same height as before when we had images */
   border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -90,7 +112,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,27 +127,43 @@
   opacity: 1;
 }
 
+.project-title {
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.project-card:hover .project-title {
+  opacity: 0; /* Hide the title on hover */
+}
+
+.tech-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
 .tech-tag {
-  background: #61dafb;
+  background: #b98e18;
   color: black;
   padding: 0.2rem 0.5rem;
   border-radius: 15px;
   margin: 0.2rem;
   font-size: 0.8rem;
+  white-space: nowrap;
 }
 
 .project-overlay a {
-  color: #61dafb;
+  color: #b98e18;
   text-decoration: none;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  border: 1px solid #61dafb;
+  border: 1px solid #b98e18;
   border-radius: 5px;
   transition: all 0.3s ease;
 }
 
 .project-overlay a:hover {
-  background: #61dafb;
+  background: #b98e18;
   color: black;
 }
 
@@ -197,6 +235,7 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  border: 1px solid #b98e18;
 }
 
 .info-bubble:hover {
@@ -211,7 +250,7 @@
 }
 
 .info-bubble h2 {
-  color: #61dafb;
+  color: #FFFFFF;
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
@@ -223,13 +262,14 @@
 
 .section-title {
   text-align: center;
-  color: #61dafb;
+  color: #FFFFFF;
   margin: 2rem 0;
   font-size: 2rem;
+  padding-top:3rem;
 }
 
 .click-hint {
-  color: #61dafb;
+  color: #b98e18;
   font-size: 0.9rem;
   margin-top: 1rem;
 }
@@ -365,6 +405,7 @@
   flex-direction: column;
   align-items: center;
   margin: 2rem 0;
+  padding-top:.7rem;
 }
 
 .profile-image {
@@ -373,14 +414,14 @@
   border-radius: 50%;
   object-fit: cover;
   object-position: center 30%;
-  border: 3px solid #61dafb;
+  border: 3px solid #b98e18;
   box-shadow: 0 0 20px rgba(97, 218, 251, 0.3);
   scale: 1.1;
 }
 
 .profile-caption {
-  margin-top: 1rem;
-  color: #d4d4d4;
+  margin-top: 2.7rem;
+  color: #fdfdfd;
   font-size: 1.1rem;
 }
 
@@ -396,4 +437,61 @@
     grid-template-columns: 1fr; /* 1 column on mobile */
   }
 }
+
+h1 {
+  position: relative; /* Positioning for text above background */
+  z-index: 1; /* Ensure text is above the background */
+}
+
+.social-links-container {
+  display: flex;
+  justify-content: space-between; /* Space between left and right sections */
+  width: 100%; /* Full width */
+  position: absolute; /* Positioning at the top */
+  top: 1rem; /* Adjust as needed */
+  left: 0;
+  right: 0;
+  padding: 0 2rem; /* Add some padding */
+  z-index: 2; /* Ensure it stays above the background */
+}
+
+.social-links-left,
+.social-links-right {
+  display: flex;
+  gap: 1rem; /* Space between links */
+}
+
+.social-link {
+  color: white; /* Change to your desired color */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* Space between buttons */
+  margin: 2rem 0; /* Margin around the button section */
+}
+
+.big-button {
+  background-color: #b98e18, 0; /* Button background color */
+  color: white; /* Text color */
+  padding: 1rem 2rem; /* Padding for the button */
+  margin-left: 1rem;
+  border: 1px solid #b98e18;
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1.5rem; /* Font size */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.big-button:hover {
+  background-color: #a78e16; /* Darker shade on hover */
+}
+
+
 
