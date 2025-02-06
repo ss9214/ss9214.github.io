@@ -124,21 +124,26 @@ function App() {
       title: "AI Engineering Intern",
       company: "Radical AI",
       location: "Remote",
-      description: "- Built a Retrieval-Augmented Generation Pipeline to ingest any document(s) and custom argument(s) to create custom quizzes. \n- Utilized langchain, pandas, and geminiAI to develop file loaders for 10+ different file types. \n- Utilized VertexAI, Google Cloud Platform, and VertexAI to prompt engineer embedded vertex data into custom quizzes.",
+      description: ["- Built a Retrieval-Augmented Generation Pipeline to ingest any document(s) and custom argument(s) to create custom quizzes.",
+                    "- Utilized langchain, pandas, and geminiAI to develop file loaders for 10+ different file types.",
+                    "- Utilized VertexAI, Google Cloud Platform, and VertexAI to prompt engineer embedded vertex data into custom quizzes."]
     },
     {
       id: 2,
-      title: "Machine Learning Security Researcher",
+      title: "ML Security Researcher",
       company: "UMass Amherst",
       location: "Amherst, MA",
-      description: "- Performed a thorough analysis of the robustness of Convolutional Neural Network Architectures against adversarial attacks.\n- Specialized in VGG-Net and ResNet, making use of tensorflow to analyze differences in structure, accuracy, and robustness.\n- Presented findings at the Undergraduate Research Night, earning the Best Undergraduate Researcher Award for my work.",
+      description: ["- Performed a thorough analysis of the robustness of Convolutional Neural Network Architectures against adversarial attacks.",
+                    "- Specialized in VGG-Net and ResNet, making use of tensorflow to analyze differences in structure, accuracy, and robustness.",
+                    "- Presented findings at the Undergraduate Research Night, earning the Best Undergraduate Researcher Award for my work."]
     },
     {
       id: 3,
       title: "Assistant Instructor",
       company: "Kumon North America",
       location: "Framingham, MA",
-      description: "- Taught kids ages 5 - 18 mathematics and literature up to calculus and advanced essay writing.\n- Worked in a team environment, learned to communicate with parents, and worked with children with mental disabilities.",
+      description: ["- Taught kids ages 5 - 18 mathematics and literature up to calculus and advanced essay writing.",
+                    "- Worked in a team environment, learned to communicate with parents, and worked with children with mental disabilities."]
     }
   ];
 
@@ -328,18 +333,21 @@ function App() {
                     fontSize: '2rem', 
                     color: '#FFFFFF',
                     textAlign: 'center',
-                    padding: '2rem'
+                    padding: '1rem'
                   }}>
                     <h3>{experience.title}</h3>
-                    <p>{experience.company}</p>
-                    <p>{experience.location}</p>
+                    <p style={{fontSize: '1.5rem'}}>{experience.company}</p>
+                    <p style={{fontSize: '1.5rem'}}>{experience.location}</p>
                   </h2>
               </div>
               <div className="project-overlay">
                   <h3>{experience.title}</h3>
-                  <p>{experience.company}</p>
-                  <p>{experience.location}</p>
-                  <p style={{fontSize:'.95rem'}}>{experience.description}</p>
+                  <p style={{fontSize:'.9rem', margin:'0.6rem'}}>{experience.company}</p>
+                  <p style={{fontSize:'.9rem', margin:'0.6rem'}}>{experience.location}</p>
+                  {experience.description.map(desc=> (
+                    <p style={{fontSize:'.8rem', margin:'0.3rem'}}>{desc}</p>
+                  ))}
+                  
                 </div>
             </div>
           ))}

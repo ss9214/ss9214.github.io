@@ -474,6 +474,14 @@ h1 {
   gap: 0.5rem;
 }
 
+.button-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
 .button-section {
   display: flex;
   flex-direction: column;
@@ -483,7 +491,11 @@ h1 {
 }
 
 .big-button {
+  align-self: flex-start;
+  min-width: 180px;
+  flex: 0 1 auto;
   background-color: #b98e18, 0; /* Button background color */
+  position:relative;
   color: white; /* Text color */
   padding: 1rem 2rem; /* Padding for the button */
   margin-left: 1rem;
@@ -491,7 +503,9 @@ h1 {
   border-radius: 5px; /* Rounded corners */
   font-size: 1.5rem; /* Font size */
   text-decoration: none; /* Remove underline */
+  overflow: hidden;
   transition: background-color 0.3s ease; /* Smooth background transition */
+  text-align: center;
 }
 
 .big-button:hover {

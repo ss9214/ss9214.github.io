@@ -12,7 +12,7 @@
     "typewriter-effect": "^2.21.0",
     "web-vitals": "^4.2.4"
   },
-  "homepage": "https://ss9214.github.io/portfolio",
+  "homepage": "https://ss9214.github.io/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
