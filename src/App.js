@@ -13,15 +13,15 @@ function App() {
       id: 1,
       title: "Hand-motion controlled UAV Drone",
       description: "A Project for UMass Amherst's CS528 course that uses an esp32-s3 microcontroller and an mpu6050 IMU to control a UAV drone with hand-motions.", 
-      technologies: ["C", "EspressIDF"],
+      technologies: ["C", "EspressIDF", "Scikit-learn", "Pandas", "Numpy"],
       link: "https://github.com/ss9214/cs528-UAV_Drone"
     },
     {
       id: 2,
-      title: "AI Pacman",
-      description: "A Project for UMass Amherst's CS383 course that explores various fundamental techniques in Artificial Intelligence, such as Searching, Heuristics, and Reinforcement Learning.",
-      technologies: ["Python"],
-      link: "https://github.com/ss9214/AI_Pacman_Project"
+      title: "Undergraduate CICS Course Planner",
+      description: "On this website, UMass CS students can search for any CICS class, with a built in search filter, and generate potential schedules based on criteria of their choosing.",
+      technologies: ["Angular", "Flask", "Typescript", "Python", "OpenAI", "BeautifulSoup", "MongoDB"],
+      link: "https://github.com/ss9214/course-planner"
     },
     {
       id: 3,
@@ -32,10 +32,10 @@ function App() {
     },
     {
       id: 4,
-      title: "Undergraduate CICS Course Planner",
-      description: "On this website, UMass CS students can search for any CICS class, with a built in search filter, and generate potential schedules based on criteria of their choosing.",
-      technologies: ["Angular", "Flask", "Typescript", "Python", "OpenAI", "BeautifulSoup", "MongoDB"],
-      link: "https://github.com/ss9214/course-planner"
+      title: "AI Pacman",
+      description: "A Project for UMass Amherst's CS383 course that explores various fundamental techniques in Artificial Intelligence, such as Searching, Heuristics, and Reinforcement Learning.",
+      technologies: ["Python"],
+      link: "https://github.com/ss9214/AI_Pacman_Project"
     },
     {
       id: 5,
