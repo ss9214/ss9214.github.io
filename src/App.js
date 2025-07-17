@@ -11,41 +11,55 @@ function App() {
   const projects = [
     {
       id: 1,
+      title: "MITRE Cybersecurity Capstone Project",
+      description: "A Project for UMass Amherst's CS564 MITRE course to exploit CVE-2017-5638, a vulnerability in Apache Struts2 that lets attackers run commands on the server using a crafted Content-Type header.", 
+      technologies: ["C", "Python", "TCP", "Linux", "Docker"],
+      link: "https://github.com/ss9214/cs564capstone"
+    },
+    {
+      id: 2,
       title: "Hand-motion controlled UAV Drone",
       description: "A Project for UMass Amherst's CS528 course that uses an esp32-s3 microcontroller and an mpu6050 IMU to control a UAV drone with hand-motions.", 
       technologies: ["C", "EspressIDF", "Scikit-learn", "Pandas", "Numpy"],
       link: "https://github.com/ss9214/cs528-UAV_Drone"
     },
     {
-      id: 2,
+      id: 3,
+      title: "400 Card Game",
+      description: "A personal project that uses MERN stack to create a card game that can be played by 4 players. Uses websockets to simulate real-time connection between players.",
+      technologies: ["React", "Node.js", "Express", "MySQL"],
+      link: "https://github.com/ss9214/400-card-game"
+    },
+    {
+      id: 4,
       title: "Undergraduate CICS Course Planner",
       description: "On this website, UMass CS students can search for any CICS class, with a built in search filter, and generate potential schedules based on criteria of their choosing.",
       technologies: ["Angular", "Flask", "Typescript", "Python", "OpenAI", "BeautifulSoup", "MongoDB"],
       link: "https://github.com/ss9214/course-planner"
     },
     {
-      id: 3,
+      id: 5,
       title: "Modista - The Next-Gen Fashion Marketplace",
       description: "Built a fashion marketplace in a hackathon for users to find stylists to style existing clothing and suggest outfits. Developed a Machine Learning model that can make recommendations to provide accurate potential outfits.",
       technologies: ["Flutter", "Flask", "Dart", "Python", "MongoDB", "Tensorflow", "Scikit-learn", "Pandas"],
       link: "https://github.com/ss9214/modista"
     },
     {
-      id: 4,
+      id: 6,
       title: "AI Pacman",
       description: "A Project for UMass Amherst's CS383 course that explores various fundamental techniques in Artificial Intelligence, such as Searching, Heuristics, and Reinforcement Learning.",
       technologies: ["Python"],
       link: "https://github.com/ss9214/AI_Pacman_Project"
     },
     {
-      id: 5,
+      id: 7,
       title: "CICS Undergraduate Research Finder",
       description: "Built this website in a team of 8 for UMass Amherst's CS320 course. This web application allows undergraduate students and professors at UMass Amherst to connect over research opportunities. Students can search for professors and labs that are offering research projects. ",
       technologies: ["Angular", "Flask", "Typescript", "Python", "BeautifulSoup", "MongoDB"],
       link: "https://github.com/ss9214/course-planner"
     },
     {
-      id: 6,
+      id: 8,
       title: "Treehouse Discord Bot",
       description: "This was my first-ever coding project, and it holds a lot of memories! This is a multipurpose all-in-one discord bot with music, games, leveling and more! ",
       technologies: ["Python", "PostgreSQL", "discord.py"],
@@ -90,28 +104,28 @@ function App() {
     {
       id: "background",
       title: "My Background",
-      content: "Nice to meet you! I'm Srihari Srivatsa and I am a dedicated senior majoring in Computer Science at UMass Amherst. My passion for computer science stems from my innate curiosity and thirst for knowledge. I love taking incredibly hard classes, watching YouTube videos, and learning new concepts wherever I can. I want to turn theoretical to tangible, creating a physical product customers can look to. \n\nOutside of my professional life, I am an experienced Carnatic Violinist and Saxophonist, and I perform around New England and in India. I also enjoy playing table tennis and badminton, as well as weightlifting at the gym! ",
+      content: "Nice to meet you! I'm Srihari Srivatsa and I am a dedicated masters student in Cybersecurity at Georgia Tech. My passion for computer science stems from my innate curiosity and thirst for knowledge. I love taking incredibly hard classes, watching YouTube videos, and learning new concepts wherever I can. I want to turn theoretical to tangible, creating a physical product customers can look to. \n\nOutside of my professional life, I am an experienced Carnatic Violinist and Saxophonist, and I perform around New England and in India. I also enjoy playing table tennis and badminton, as well as weightlifting at the gym! ",
       icon: "👋"
     },
     {
       id: "interests",
       title: "Career Interests",
-      content: "I will be graduating from UMass Amherst in May 2025 with a B.S. in Computer Science. Right now I am preparing for early career positions in Cybersecurity and Software Engineering. I plan to eventually pursue a Masters degree in Cybersecurity, with a research focus on Security for Machine Learning, and potentially a PhD.",
+      content: "I will be graduating from UMass Amherst in May 2025 with a B.S. in Computer Science. Right now I am preparing for early career positions in Cybersecurity and Software Engineering. Starting Fall 2025, I will be pursuing a Masters degree in Cybersecurity at Georgia Tech, with a research focus on Information and System Security in Healthcare, and potentially a PhD.",
       icon: "🎯"
     },
     {
       id: "skills",
       title: "Technical Skills",
       content: `{
-  "languages": ["Python", "C", "TypeScript", "Javascript", "Java", "Dart"],
+  "languages": ["Python", "C", "TypeScript", "YAML", "Javascript", "Java", "Dart"],
   "frameworks": {
-    "frontend": ["Angular", "React", "Flutter"],
-    "backend": ["Flask", "Django", "FastAPI"]
-  },
-  "AI_tools": ["LangChain", "GeminiAI", "VertexAI", "RAG Pipelines"],
-  "security_tools": ["Wireshark", "Nmap", "Ghidra", "Metasploit"],
-  "databases": ["MongoDB", "PostgreSQL"] ,
-  "tools": ["Git", "Docker", "Linux", "Shell", "ESP-IDF"]
+                  "frontend": ["Angular", "React", "Flutter"],
+                  "backend": ["Node.js", "Flask", "Django", "FastAPI"]
+                },
+  "AI_tools": ["Agentic Workflows","LangChain", "GeminiAI", "VertexAI", "RAG Pipelines"],
+  "security_tools": ["VMWare", "Wireshark", "Nmap", "Ghidra", "Metasploit"],
+  "databases": ["MySQL","MongoDB", "PostgreSQL"] ,
+  "tools": ["AWS (ECS/EKS)", "Kubernetes",  "Docker", "Gitlab CI/CD","Linux", "Shell", "ESP-IDF"]
   
 }`,
       icon: "💻"
@@ -121,6 +135,15 @@ function App() {
   const experiences = [
     {
       id: 1,
+      title: "DevOps Coop",
+      company: "Veracode",
+      location: "Burlington, MA",
+      description: ["- Developed and deployed a GitLab-integrated internal developer portal using Backstage.io, EKS/ECS (AWS), ArgoCD, and Helm, enabling centralized service discovery, documentation, and scaffolding.",
+                    "- Integrated GitLab CI/CD templates, React-based dashboards, and DORA metrics to improve observability and standardize deployments across teams.",
+                    "- Reduced service spin-up time by 90% , onboarded 80%+ of projects into the catalog, and automated repo discovery using GitLab hooks and APIs."]
+    },
+    {
+      id: 2,
       title: "AI Engineering Intern",
       company: "Radical AI",
       location: "Remote",
@@ -129,7 +152,7 @@ function App() {
                     "- Utilized VertexAI, Google Cloud Platform, and VertexAI to prompt engineer embedded vertex data into custom quizzes."]
     },
     {
-      id: 2,
+      id: 3,
       title: "ML Security Researcher",
       company: "UMass Amherst",
       location: "Amherst, MA",
@@ -138,7 +161,7 @@ function App() {
                     "- Presented findings at the Undergraduate Research Night, earning the Best Undergraduate Researcher Award for my work."]
     },
     {
-      id: 3,
+      id: 4,
       title: "Assistant Instructor",
       company: "Kumon North America",
       location: "Framingham, MA",
@@ -268,7 +291,9 @@ function App() {
               options={{
                 strings: [
                   'Aspiring Security Software Engineer',
-                  'B.S. Computer Science at UMass Amherst'
+                  'Current M.S. in Information Security at Georgia Tech',
+                  'B.S. Computer Science at UMass Amherst',
+                  
                 ],
                 autoStart: true,
                 loop: true,
@@ -391,9 +416,9 @@ function App() {
             <button className="close-button" onClick={closeResume}>×</button>
             <h2>My Resume</h2>
             <iframe 
-            src="https://drive.google.com/file/d/1SDWcg3rvYvIb1dICCO3LARU0Nk_oOmmb/preview" 
+            src="https://drive.google.com/file/d/1d_IHptryRAOmgTZ44q_6ayLZ_3qe5dcp/preview" 
             width="500" height="480" title="My Resume" allow="autoplay"></iframe>
-            <a href="https://drive.google.com/uc?export=download&id=1SDWcg3rvYvIb1dICCO3LARU0Nk_oOmmb" download className="download-button">Download Resume</a>
+            <a href="https://drive.google.com/uc?export=download&id=1d_IHptryRAOmgTZ44q_6ayLZ_3qe5dcp" download className="download-button">Download Resume</a>
           </div>
         </div>
       )}
