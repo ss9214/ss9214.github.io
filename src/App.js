@@ -125,7 +125,7 @@ function App() {
   "AI_tools": ["Agentic Workflows","LangChain", "GeminiAI", "VertexAI", "RAG Pipelines"],
   "security_tools": ["VMWare", "Wireshark", "Nmap", "Ghidra", "Metasploit"],
   "databases": ["MySQL","MongoDB", "PostgreSQL"] ,
-  "tools": ["AWS (ECS/EKS)", "Kubernetes",  "Docker", "Gitlab CI/CD","Linux", "Shell", "ESP-IDF"]
+  "tools": ["Atlassian Suite","AWS (ECS/EKS)", "Kubernetes",  "Docker", "Gitlab CI/CD","Linux", "Shell", "ESP-IDF"]
   
 }`,
       icon: "💻"
