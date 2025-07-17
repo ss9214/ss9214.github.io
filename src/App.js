@@ -290,6 +290,7 @@ function App() {
             <Typewriter
               options={{
                 strings: [
+                  'Current DevOps Coop @ Veracode',
                   'Aspiring Security Software Engineer',
                   'Current M.S. in Information Security at Georgia Tech',
                   'B.S. Computer Science at UMass Amherst',
