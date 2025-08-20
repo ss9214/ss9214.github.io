@@ -96,7 +96,7 @@ function App() {
       icon: <svg height="24" width="24" viewBox="0 0 24 24" fill="currentColor">
         <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
       </svg>,
-      display: "(508) 969-7100"
+      display: "+1 (508) 969-7100"
     }
   ];
 
@@ -110,22 +110,22 @@ function App() {
     {
       id: "interests",
       title: "Career Interests",
-      content: "I will be graduating from UMass Amherst in May 2025 with a B.S. in Computer Science. Right now I am preparing for early career positions in Cybersecurity and Software Engineering. Starting Fall 2025, I will be pursuing a Masters degree in Cybersecurity at Georgia Tech, with a research focus on Information and System Security in Healthcare, and potentially a PhD.",
+      content: "I graduated from UMass Amherst in May 2025 with a B.S. in Computer Science. Right now I am preparing for early career positions in Cybersecurity and Software Engineering. Starting Fall 2025, I will be pursuing a Masters degree in Cybersecurity at Georgia Tech, with a research focus on Information and System Security in Healthcare, and potentially a PhD.",
       icon: "🎯"
     },
     {
       id: "skills",
       title: "Technical Skills",
       content: `{
-  "languages": ["Python", "C", "TypeScript", "YAML", "Javascript", "Java", "Dart"],
+  "languages": ["Python", "C", "TypeScript", "YAML", "Javascript", "Bash","Java", "Dart"],
   "frameworks": {
-                  "frontend": ["Angular", "React", "Flutter"],
+                  "frontend": ["React", "Angular", "Flutter"],
                   "backend": ["Node.js", "Flask", "Django", "FastAPI"]
                 },
   "AI_tools": ["Agentic Workflows","LangChain", "GeminiAI", "VertexAI", "RAG Pipelines"],
   "security_tools": ["VMWare", "Wireshark", "Nmap", "Ghidra", "Metasploit"],
   "databases": ["MySQL","MongoDB", "PostgreSQL"] ,
-  "tools": ["Atlassian Suite","AWS (ECS/EKS)", "Kubernetes",  "Docker", "Gitlab CI/CD","Linux", "Shell", "ESP-IDF"]
+  "tools": ["Atlassian Suite","AWS (ECS/EKS/Lambda)", "Kubernetes",  "Docker", "Gitlab CI/CD","Linux", "Shell", "ESP-IDF"]
   
 }`,
       icon: "💻"
@@ -138,27 +138,27 @@ function App() {
       title: "DevOps Coop",
       company: "Veracode",
       location: "Burlington, MA",
-      description: ["- Developed and deployed a GitLab-integrated internal developer portal using Backstage.io, EKS/ECS (AWS), ArgoCD, and Helm, enabling centralized service discovery, documentation, and scaffolding.",
-                    "- Integrated GitLab CI/CD templates, React-based dashboards, and DORA metrics to improve observability and standardize deployments across teams.",
-                    "- Reduced service spin-up time by 90% , onboarded 80%+ of projects into the catalog, and automated repo discovery using GitLab hooks and APIs."]
+      description: ["- Developed a GitLab-integrated internal portal using Backstage.io, Kubernetes (EKS), Docker (ECS), Terraform, ArgoCD, and Helm, enabling centralized service discovery, enhanced documentation, and automated service creation.",
+                    "- Utilized Shell and Python scripting to automate CLI workflow, data extraction, and dependency management.",
+                    "- Integrated over 80% of company GitLab repositories, Kubernetes pod healths, Prometheus metrics,  and ArgoCD service healths into React-based dashboards to improve observability and visibility across teams.",
+                    "- Standardized and automated new service configuration for ArgoCD and Helm, reducing onboarding time for new services by 90%."]
     },
     {
       id: 2,
       title: "AI Engineering Intern",
       company: "Radical AI",
       location: "Remote",
-      description: ["- Built a Retrieval-Augmented Generation Pipeline to ingest any document(s) and custom argument(s) to create custom quizzes.",
-                    "- Utilized langchain, pandas, and geminiAI to develop file loaders for 10+ different file types.",
-                    "- Utilized VertexAI, Google Cloud Platform, and VertexAI to prompt engineer embedded vertex data into custom quizzes."]
+      description: ["- Engineered an LLM based quiz generation tool using LangChain, GeminiAI, and GCP VertexAI, enabling educators to automatically generate quizzes from structured/unstructured files (10+ formats).",
+                    "- Leveraged prompt engineering and retrieval-augmented generation (RAG) to extract data from embedded documents.",
+                    "- Demonstrated cross-team collaboration and efficient delivery with a small agile team using GitHub and CI/CD concepts."]
     },
     {
       id: 3,
-      title: "ML Security Researcher",
+      title: "ML Security Research Volunteer",
       company: "UMass Amherst",
       location: "Amherst, MA",
-      description: ["- Performed a thorough analysis of the robustness of Convolutional Neural Network Architectures against adversarial attacks.",
-                    "- Specialized in VGG-Net and ResNet, making use of tensorflow to analyze differences in structure, accuracy, and robustness.",
-                    "- Presented findings at the Undergraduate Research Night, earning the Best Undergraduate Researcher Award for my work."]
+      description: ["- Researched adversarial robustness of CNN architectures (VGG, ResNet) using TensorFlow, exploring potential vulnerabilities in ML-based classification systems.",
+                    "- Presented work at the Undergraduate Research Night, earning the Best Undergraduate Research Volunteer Award for my work."]
     },
     {
       id: 4,
