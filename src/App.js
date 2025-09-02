@@ -417,9 +417,9 @@ function App() {
             <button className="close-button" onClick={closeResume}>×</button>
             <h2>My Resume</h2>
             <iframe 
-            src="https://drive.google.com/file/d/1d_IHptryRAOmgTZ44q_6ayLZ_3qe5dcp/preview" 
+            src="Srihari_Srivatsa_Resume.pdf" 
             width="500" height="480" title="My Resume" allow="autoplay"></iframe>
-            <a href="https://drive.google.com/uc?export=download&id=1d_IHptryRAOmgTZ44q_6ayLZ_3qe5dcp" download className="download-button">Download Resume</a>
+            <a href="Srihari_Srivatsa_Resume.pdf" download className="download-button">Download Resume</a>
           </div>
         </div>
       )}
