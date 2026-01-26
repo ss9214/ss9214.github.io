@@ -20,7 +20,7 @@ function App() {
       id: 2,
       title: "Hand-motion controlled UAV Drone",
       description: "A Project for UMass Amherst's CS528 course that uses an esp32-s3 microcontroller and an mpu6050 IMU to control a UAV drone with hand-motions.", 
-      technologies: ["C", "EspressIDF", "Scikit-learn", "Pandas", "Numpy"],
+      technologies: ["C", "MATLAB", "EspressIDF", "Scikit-learn", "Pandas", "Numpy"],
       link: "https://github.com/ss9214/cs528-UAV_Drone"
     },
     {
@@ -117,16 +117,15 @@ function App() {
       id: "skills",
       title: "Technical Skills",
       content: `{
-  "languages": ["Python", "C", "TypeScript", "YAML", "Javascript", "Bash","Java", "Dart"],
+  "languages": ["Python", "TypeScript", "C", "Java", "YAML", "Javascript", "Bash", "Dart"],
   "frameworks": {
                   "frontend": ["React", "Angular", "Flutter"],
-                  "backend": ["Node.js", "Flask", "Django", "FastAPI"]
+                  "backend": ["Node.js", "Flask", "Springboot", "Django", "FastAPI"]
                 },
-  "AI_tools": ["Agentic Workflows","LangChain", "GeminiAI", "VertexAI", "RAG Pipelines"],
+  "ai_tools": ["Model Context Protocol (MCP)", "LangChain", "GeminiAI", "VertexAI", "RAG Pipelines"],
   "security_tools": ["VMWare", "Wireshark", "Nmap", "Ghidra", "Metasploit"],
   "databases": ["MySQL","MongoDB", "PostgreSQL"] ,
   "tools": ["Atlassian Suite","AWS (ECS/EKS/Lambda)", "Kubernetes",  "Docker", "Gitlab CI/CD","Linux", "Shell", "ESP-IDF"]
-  
 }`,
       icon: "💻"
     }
@@ -138,19 +137,18 @@ function App() {
       title: "DevOps Coop",
       company: "Veracode",
       location: "Burlington, MA",
-      description: ["- Developed a GitLab-integrated internal portal using Backstage.io, Kubernetes (EKS), Docker (ECS), Terraform, ArgoCD, and Helm, enabling centralized service discovery, enhanced documentation, and automated service creation.",
-                    "- Utilized Shell and Python scripting to automate CLI workflow, data extraction, and dependency management.",
-                    "- Integrated over 80% of company GitLab repositories, Kubernetes pod healths, Prometheus metrics,  and ArgoCD service healths into React-based dashboards to improve observability and visibility across teams.",
-                    "- Standardized and automated new service configuration for ArgoCD and Helm, reducing onboarding time for new services by 90%."]
+      description: ["- Architected a GitLab-integrated internal developer portal using React and Backstage.io, enabling teams to rapidly discover projects, resources, and documentation, reducing documentation lookup time by 75%.",
+                    "- Standardized and automated new service configuration using CI/CD pipelines and Python/Javascript scripting, reducing onboarding time for new services by 90%.",
+                    "- Prototyped an internal chatbot using AWS Bedrock and Claude that leveraged a knowledge base of 200+ DevOps standards, templates, and documentation to help engineering teams accurately adopt best practices faster.",
+                    "- Deployed and scaled RenovateBot across 50+ repositories, automating dependency updates and reducing manual maintenance overhead by 85%."]
     },
     {
       id: 2,
       title: "AI Engineering Intern",
       company: "Radical AI",
       location: "Remote",
-      description: ["- Engineered an LLM based quiz generation tool using LangChain, GeminiAI, and GCP VertexAI, enabling educators to automatically generate quizzes from structured/unstructured files (10+ formats).",
-                    "- Leveraged prompt engineering and retrieval-augmented generation (RAG) to extract data from embedded documents.",
-                    "- Demonstrated cross-team collaboration and efficient delivery with a small agile team using GitHub and CI/CD concepts."]
+      description: ["- Developed an LLM-based quiz generation tool using Python, LangChain, GeminiAI, and GCP, enabling 200+ educators to generate high-quality quizzes from structured or unstructured files in 5 minutes vs. 1+ hours for manual creation.",
+                    "- Leveraged prompt engineering and retrieval-augmented generation (RAG) to extract contextually relevant data from embedded documents to create randomized quiz questions."]
     },
     {
       id: 3,
@@ -165,8 +163,9 @@ function App() {
       title: "Assistant Instructor",
       company: "Kumon North America",
       location: "Framingham, MA",
-      description: ["- Taught kids ages 5 - 18 mathematics and literature up to calculus and advanced essay writing.",
-                    "- Worked in a team environment, learned to communicate with parents, and worked with children with mental disabilities."]
+      description: ["- Working with students aged 3-18 to develop their skills and abilities in math and english.",
+                    "- Taught subjects ranging from tracing letters to advanced thematic analysis and counting numbers to calculus and linear algebra.",
+                    "- Developed strong communication and interpersonal skills by working with a diverse group of students, parents, and staff."]
     }
   ];
 
@@ -290,8 +289,8 @@ function App() {
             <Typewriter
               options={{
                 strings: [
-                  'Current DevOps Coop @ Veracode',
-                  'Aspiring Security Software Engineer',
+                  'Ex-DevOps Intern @ Veracode',
+                  'Aspiring Cloud Engineer',
                   'Current M.S. in Information Security at Georgia Tech',
                   'B.S. Computer Science at UMass Amherst',
                   
@@ -354,24 +353,22 @@ function App() {
         <main className="projects-grid">
           {experiences.map(experience => (
             <div key={experience.id} className="project-card">
-              <div className="project-image-container">
+              <div className="experience-image-container">
                 <h2 className="project-title" style={{ 
-                    fontSize: '2rem', 
+                    fontSize: '1.5rem', 
                     color: '#FFFFFF',
                     textAlign: 'center',
-                    padding: '1rem'
+                    padding: '.5rem'
                   }}>
                     <h3>{experience.title}</h3>
-                    <p style={{fontSize: '1.5rem'}}>{experience.company}</p>
-                    <p style={{fontSize: '1.5rem'}}>{experience.location}</p>
+                    <p style={{fontSize: '1rem'}}>{experience.company}</p>
+                    <p style={{fontSize: '1rem'}}>{experience.location}</p>
                   </h2>
               </div>
               <div className="project-overlay">
-                  <h3>{experience.title}</h3>
-                  <p style={{fontSize:'.9rem', margin:'0.6rem'}}>{experience.company}</p>
-                  <p style={{fontSize:'.9rem', margin:'0.6rem'}}>{experience.location}</p>
+                  <h3>{experience.title} - {experience.company} - {experience.location}</h3>
                   {experience.description.map(desc=> (
-                    <p style={{fontSize:'.8rem', margin:'0.3rem'}}>{desc}</p>
+                    <p style={{fontSize:'.7rem', margin:'0.3rem'}}>{desc}</p>
                   ))}
                   
                 </div>
@@ -417,9 +414,9 @@ function App() {
             <button className="close-button" onClick={closeResume}>×</button>
             <h2>My Resume</h2>
             <iframe 
-            src="Srihari_Srivatsa_Resume.pdf" 
+            src="Srihari Srivatsa Resume.pdf" 
             width="500" height="480" title="My Resume" allow="autoplay"></iframe>
-            <a href="Srihari_Srivatsa_Resume.pdf" download className="download-button">Download Resume</a>
+            <a href="Srihari Srivatsa Resume.pdf" download className="download-button">Download Resume</a>
           </div>
         </div>
       )}

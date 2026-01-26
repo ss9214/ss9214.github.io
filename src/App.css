@@ -97,6 +97,18 @@ code {
   justify-content: center;
 }
 
+.experience-image-container {
+  position: relative;
+  width: 100%;
+  height: 400px;  /* Same height as before when we had images */
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .project-image-container img {
   position: absolute;
   top: 0;
@@ -105,6 +117,7 @@ code {
   height: 100%;
   object-fit: cover;
 }
+
 
 .project-overlay {
   position: absolute;
