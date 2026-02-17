@@ -9,6 +9,13 @@ function App() {
 
   const projects = [
     {
+      id: 0,
+      title: "Automated Web Application Deployment CLI",
+      description: "Built a Python CLI tool for automated web app deployment featuring repository analysis, Vercel integration, AWS infrastructure provisioning via Terraform, secure cross-platform credential management, and real-time build monitoring.",
+      technologies: ["Python", "Terraform", "AWS", "Kubernetes", "Vercel API", "ArgoCD"],
+      link: "https://github.com/ss9214/service-deployer-and-manager"
+    },
+    {
       id: 1,
       title: "Cybersecurity Capstone Project",
       description: "A Project for UMass Amherst's CS564: Cyber Effects course to exploit CVE-2017-5638, a vulnerability in Apache Struts2 that lets attackers run commands on the server using a crafted Content-Type header.", 
@@ -25,7 +32,7 @@ function App() {
     {
       id: 3,
       title: "Sri Party Games",
-      description: "A personal project tocreate a party game site for games that can be played by 2-10 players. Deployed full-stack application on AWS EC2, achieving 99.9% uptime through PM2 process management and zero-downtime deployments",
+      description: "A personal project to create a party game site for games that can be played by 2-10 players. Deployed full-stack application on AWS EC2, achieving 99.9% uptime through PM2 process management and zero-downtime deployments",
       technologies: ["React", "Node.js", "TypeScript", "DynamoDB", "AWS EC2", "Socket.io"],
       link: "https://github.com/ss9214/sri-party-games"
     },
