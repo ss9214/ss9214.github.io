@@ -563,7 +563,7 @@ h1 {
 }
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
   transition: background-color 0.3s ease; /* Smooth transition */
-}
+
 
 .home-button:hover {
   background-color: #443b00,; /* Darker gold on hover */
