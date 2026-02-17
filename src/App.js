@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import React from 'react';
-import { Typewriter } from 'react-simple-typewriter';
 import './App.css';
-
+import { TypeAnimation } from 'react-type-animation';
 
 function App() {
   const [selectedSection, setSelectedSection] = useState(null);
@@ -110,22 +109,23 @@ function App() {
     {
       id: "interests",
       title: "Career Interests",
-      content: "I graduated from UMass Amherst in May 2025 with a B.S. in Computer Science. Right now I am preparing for early career positions in Cybersecurity and Software Engineering. Starting Fall 2025, I will be pursuing a Masters degree in Cybersecurity at Georgia Tech, with a research focus on Information and System Security in Healthcare, and potentially a PhD.",
+      content: "I graduated from UMass Amherst in May 2025 with a B.S. in Computer Science. Right now I am preparing for early career positions in DevOps Engineering and Cybersecurity. I am currently pursuing a Masters degree in Cybersecurity at Georgia Tech, with a focus on Cloud Security and Information Security.",
       icon: "🎯"
     },
     {
       id: "skills",
       title: "Technical Skills",
       content: `{
-  "languages": ["Python", "TypeScript", "C", "Java", "YAML", "Javascript", "Bash", "Dart"],
-  "frameworks": {
+  "languages": ["Python", "TypeScript/JavaScript", "C", "Java", "YAML", "Bash", "Dart"],
+  "webDevelopment": {
                   "frontend": ["React", "Angular", "Flutter"],
                   "backend": ["Node.js", "Flask", "Springboot", "Django", "FastAPI"]
                 },
-  "ai_tools": ["Model Context Protocol (MCP)", "LangChain", "GeminiAI", "VertexAI", "RAG Pipelines"],
-  "security_tools": ["VMWare", "Wireshark", "Nmap", "Ghidra", "Metasploit"],
-  "databases": ["MySQL","MongoDB", "PostgreSQL"] ,
-  "tools": ["Atlassian Suite","AWS (ECS/EKS/Lambda)", "Kubernetes",  "Docker", "Gitlab CI/CD","Linux", "Shell", "ESP-IDF"]
+  "AI/ML": ["Model Context Protocol (MCP)", "LangChain", "GeminiAI", "VertexAI", "RAG", "TensorFlow", "Scikit-learn", "Pandas"],
+  "security": ["VMWare", "Wireshark", "Nmap", "Ghidra", "Metasploit"],
+  "databases": ["MySQL","MongoDB", "PostgreSQL", "DynamoDB"],
+  "devOps": ["GitLab CI/CD", "Docker", "Kubernetes", "AWS Suite (S3, EKS, ELB, EC2, Bedrock, ECR)", "Helm", "Terraform", "ArgoCD"],
+  "tools": ["Git", "Atlassian Suite", "Linux", "Shell"]
 }`,
       icon: "💻"
     }
@@ -139,7 +139,7 @@ function App() {
       location: "Burlington, MA",
       description: ["- Architected a GitLab-integrated internal developer portal using React and Backstage.io, enabling teams to rapidly discover projects, resources, and documentation, reducing documentation lookup time by 75%.",
                     "- Standardized and automated new service configuration using CI/CD pipelines and Python/Javascript scripting, reducing onboarding time for new services by 90%.",
-                    "- Prototyped an internal chatbot using AWS Bedrock and Claude that leveraged a knowledge base of 200+ DevOps standards, templates, and documentation to help engineering teams accurately adopt best practices faster.",
+                    "- Prototyped an internal chatbot using AWS Bedrock and ClaudeAI that leveraged a knowledge base of 50+ DevOps standards, templates, and documentation to help engineering teams accurately adopt best practices faster.",
                     "- Deployed and scaled RenovateBot across 50+ repositories, automating dependency updates and reducing manual maintenance overhead by 85%."]
     },
     {
@@ -243,63 +243,67 @@ function App() {
     <div className="App">
 
       <header className="main-header">
-        <div className="header-content">
-          <div className="header-left">
-            {socialLinks.slice(0, 2).map(social => (
-              <a 
-                key={social.name}
+        <nav className="main-header-nav">
+          <div className="header-group header-group-left">
+            {socialLinks.slice(0, 2).map((social, idx) => (
+              <a
+                key={social.name + idx}
                 href={social.url}
-                target="_blank"
+                target={social.url.startsWith('http') ? '_blank' : '_self'}
                 rel="noopener noreferrer"
-                className="social-link"
+                className="header-social-link"
                 title={social.name}
               >
-                <span className="social-icon">{social.icon}</span>
+                <span className="header-social-icon">{social.icon}</span>
+                {social.name && <span className="header-social-label">{social.name}</span>}
               </a>
             ))}
           </div>
-          <div className="header-right">
-            {socialLinks.slice(2).map(social => (
-              <a 
-                key={social.name}
+          <div className="header-group header-group-right">
+            {socialLinks.slice(2).map((social, idx) => (
+              <a
+                key={social.name + idx}
                 href={social.url}
-                target={social.name === "Email" || social.name === "Phone" ? "_self" : "_blank"}
+                target={social.url.startsWith('http') ? '_blank' : '_self'}
                 rel="noopener noreferrer"
-                className="social-link"
+                className="header-social-link"
                 title={social.name}
               >
-                <span className="social-icon">{social.icon}</span>
-                <span className="social-label">{social.label || social.name}</span>
+                <span className="header-social-icon">{social.icon}</span>
+                {social.name && <span className="header-social-label">{social.name}</span>}
               </a>
             ))}
           </div>
-        </div>
-        <h1>Hey, I'm Srihari</h1>
+        </nav>
+      </header>
+      
         <div className="profile-container">
+          <h1 style={{paddingBottom: '15%'}}>Hey, I'm Srihari</h1>
           <img 
             src="pfp.png" 
             alt="Srihari Srivatsa" 
             className="profile-image"
           />
           <h2 className="profile-caption">
-            <Typewriter
-              words={[
+            <TypeAnimation
+              sequence={[
                 'Ex-DevOps Intern @ Veracode',
+                1500, // wait 1.5s
                 'Aspiring Cloud Engineer',
-                'Current M.S. in Information Security at Georgia Tech',
+                1500,
+                'Current M.S. Information Security major at Georgia Tech',
+                1500,
                 'B.S. Computer Science at UMass Amherst',
+                1500,
               ]}
-              loop={0}
-              cursor
-              cursorStyle="_"
-              typeSpeed={75}
-              deleteSpeed={50}
-              delaySpeed={1000}
+              wrapper="span"
+              speed={40}
+              repeat={Infinity}
+              cursor={true}
+              style={{ display: 'inline-block' }}
             />
           </h2>
         </div>
-      </header>
-
       {/* New Buttons Section */}
       <section className="button-section">
         <div className="button-container">
@@ -409,9 +413,9 @@ function App() {
             <button className="close-button" onClick={closeResume}>×</button>
             <h2>My Resume</h2>
             <iframe 
-            src="Srihari Srivatsa Resume.pdf" 
+            src="Srihari_Srivatsa_Resume.pdf" 
             width="500" height="480" title="My Resume" allow="autoplay"></iframe>
-            <a href="Srihari Srivatsa Resume.pdf" download className="download-button">Download Resume</a>
+            <a href="Srihari_Srivatsa_Resume.pdf" download className="download-button">Download Resume</a>
           </div>
         </div>
       )}
