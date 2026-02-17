@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import React from 'react';
-import Typewriter from 'typewriter-effect';
+import { Typewriter } from 'react-simple-typewriter';
 import './App.css';
 import { AnimatedBackground } from 'animated-backgrounds';
 
@@ -287,19 +287,18 @@ function App() {
           />
           <h2 className="profile-caption">
             <Typewriter
-              options={{
-                strings: [
-                  'Ex-DevOps Intern @ Veracode',
-                  'Aspiring Cloud Engineer',
-                  'Current M.S. in Information Security at Georgia Tech',
-                  'B.S. Computer Science at UMass Amherst',
-                  
-                ],
-                autoStart: true,
-                loop: true,
-                delay: 75,
-                deleteSpeed: 50,
-              }}
+              words={[
+                'Ex-DevOps Intern @ Veracode',
+                'Aspiring Cloud Engineer',
+                'Current M.S. in Information Security at Georgia Tech',
+                'B.S. Computer Science at UMass Amherst',
+              ]}
+              loop={0}
+              cursor
+              cursorStyle="_"
+              typeSpeed={75}
+              deleteSpeed={50}
+              delaySpeed={1000}
             />
           </h2>
         </div>
