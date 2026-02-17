@@ -10,8 +10,8 @@ function App() {
   const projects = [
     {
       id: 1,
-      title: "MITRE Cybersecurity Capstone Project",
-      description: "A Project for UMass Amherst's CS564 MITRE course to exploit CVE-2017-5638, a vulnerability in Apache Struts2 that lets attackers run commands on the server using a crafted Content-Type header.", 
+      title: "Cybersecurity Capstone Project",
+      description: "A Project for UMass Amherst's CS564: Cyber Effects course to exploit CVE-2017-5638, a vulnerability in Apache Struts2 that lets attackers run commands on the server using a crafted Content-Type header.", 
       technologies: ["C", "Python", "TCP", "Linux", "Docker"],
       link: "https://github.com/ss9214/cs564capstone"
     },
@@ -24,10 +24,10 @@ function App() {
     },
     {
       id: 3,
-      title: "400 Card Game",
-      description: "A personal project that uses MERN stack to create a card game that can be played by 4 players. Uses websockets to simulate real-time connection between players.",
-      technologies: ["React", "Node.js", "Express", "MySQL"],
-      link: "https://github.com/ss9214/400-card-game"
+      title: "Sri Party Games",
+      description: "A personal project tocreate a party game site for games that can be played by 2-10 players. Deployed full-stack application on AWS EC2, achieving 99.9% uptime through PM2 process management and zero-downtime deployments",
+      technologies: ["React", "Node.js", "TypeScript", "DynamoDB", "AWS EC2", "Socket.io"],
+      link: "https://github.com/ss9214/sri-party-games"
     },
     {
       id: 4,
