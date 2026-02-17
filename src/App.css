@@ -1,3 +1,68 @@
+/* Persistent header styles */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  background: rgba(20, 30, 50, 0.97);
+  box-shadow: 0 2px 16px 0 rgba(20,30,50,0.10);
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header-left, .header-right {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.header-right {
+  gap: 1.2rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  background: #23272f;
+  color: #f4f4f4;
+  border-radius: 1.7rem;
+  padding: 0.4rem 1.2rem 0.4rem 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(20,30,50,0.10);
+  transition: background 0.18s, color 0.18s;
+}
+.social-link:hover {
+  background: #2d3440;
+  color: #b98e18;
+}
+.social-icon {
+  font-size: 1.3rem;
+  margin-right: 0.6rem;
+}
+.header-left .social-link .social-label {
+  display: none;
+}
+.header-right .social-link .social-label {
+  display: inline;
+  margin-left: 0.3rem;
+  font-size: 1.05rem;
+  color: #f4f4f4;
+}
+
+/* Add top padding to main content to offset fixed header */
+.App {
+  padding-top: 4.5rem;
+}
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');

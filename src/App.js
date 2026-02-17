@@ -242,9 +242,9 @@ function App() {
   return (
     <div className="App">
 
-      <header className="portfolio-header">
-        <div className="social-links-container">
-          <div className="social-links-left">
+      <header className="main-header">
+        <div className="header-content">
+          <div className="header-left">
             {socialLinks.slice(0, 2).map(social => (
               <a 
                 key={social.name}
@@ -255,11 +255,10 @@ function App() {
                 title={social.name}
               >
                 <span className="social-icon">{social.icon}</span>
-                {social.name}
               </a>
             ))}
           </div>
-          <div className="social-links-right">
+          <div className="header-right">
             {socialLinks.slice(2).map(social => (
               <a 
                 key={social.name}
@@ -270,7 +269,7 @@ function App() {
                 title={social.name}
               >
                 <span className="social-icon">{social.icon}</span>
-                {social.name}
+                <span className="social-label">{social.label || social.name}</span>
               </a>
             ))}
           </div>
