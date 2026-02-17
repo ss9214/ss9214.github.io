@@ -3,9 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 body {
   margin: 0;
-  font-family: 'Montserrat', 'Helvetica', sans-serif !important; /* Use Helvetica, fallback to Arial, then sans-serif */
+  font-family: 'Montserrat', 'Helvetica', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a2238 0%, #283655 50%, #6b7280 100%);
 }
 
 code {
@@ -18,10 +20,15 @@ code {
 
 .App {
   text-align: center;
-  position: relative; /* Ensure positioning for child elements */
-  min-height: 100vh; /* Full height */
-  color: white; /* Text color */
-  overflow: hidden; /* Prevent overflow */
+  position: relative;
+  min-height: 100vh;
+  color: #f4f4f4;
+  overflow: hidden;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .App-logo {
@@ -35,15 +42,18 @@ code {
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-header, .portfolio-header {
+  background: transparent;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(14px + 1.5vmin);
+  color: #f4f4f4;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: none;
 }
 
 .App-link {
@@ -333,28 +343,29 @@ code {
   color:white;
 }
 
-.download-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #b98e18; /* Button background color */
-  color: white; /* Text color */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  text-decoration: none; /* Remove underline */
-  transition: background-color 0.3s ease; /* Smooth background transition */
+.home-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #3b4252;
+  color: #b98e18;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
 }
-
-.download-button:hover {
-  background-color: #a78e16; /* Darker shade on hover */
+.home-button:hover {
+  background-color: #222b3a;
+  color: #f4f4f4;
 }
-
-.modal-body {
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9);
-  text-align: left;
-}
-
 .modal-body p {
   white-space: pre-wrap;
   margin: 0;
@@ -419,28 +430,36 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem 0;
-  padding-top:.7rem;
+  margin: 2.5rem 0 1.5rem 0;
+  padding-top: 1.2rem;
+  background: rgba(20, 30, 50, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 6px 32px 0 rgba(20,30,50,0.18);
+  max-width: 420px;
+  width: 100%;
+  padding-bottom: 2rem;
 }
 
 .profile-image {
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 30%;
-  border: 3px solid #b98e18;
-  box-shadow: 0 0 20px rgba(97, 218, 251, 0.3);
-  scale: 1.1;
+  border: 3px solid #3b4252;
+  box-shadow: 0 2px 16px rgba(20,30,50,0.18);
+  margin-top: -60px;
+  background: #222b3a;
 }
 
 .profile-caption {
-  font-size: 1.5rem; /* Adjust font size as needed */
-  color: white; /* Change text color to match your theme */
-  text-align: center; /* Center the text */
-  margin-top: 1rem; /* Add some space above */
-  padding-top:2rem;
-  padding-bottom:1rem;
+  font-size: 1.25rem;
+  color: #e0e6ed;
+  text-align: center;
+  margin-top: 1.2rem;
+  padding: 0 1.5rem 0.5rem 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 /* Make it responsive for smaller screens */
@@ -491,16 +510,17 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 18px;
   justify-content: center;
   align-items: center;
+  margin-top: 0.5rem;
 }
 .button-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem; /* Space between buttons */
-  margin: 2rem 0; /* Margin around the button section */
+  gap: 1.2rem;
+  margin: 2.5rem 0 1.5rem 0;
 }
 
 .big-button {
@@ -521,26 +541,26 @@ h1 {
   text-align: center;
 }
 
-.big-button:hover {
-  background-color: #a78e16; /* Darker shade on hover */
+.big-button {
+  min-width: 180px;
+  background: linear-gradient(90deg, #283655 0%, #1a2238 100%);
+  color: #f4f4f4;
+  padding: 0.85rem 2.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(20,30,50,0.10);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  margin: 0 0.5rem;
+  letter-spacing: 0.01em;
 }
-
-.home-button {
-  position: fixed;
-  bottom: 20px; /* Distance from the bottom */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Adjust for centering */
-  background-color: rgb(112, 95, 0); /* Gold background */
-  color: black; /* Text color */
-  border: none; /* No border */
-  border-radius: 50%; /* Circular shape */
-  width: 50px; /* Width of the button */
-  height: 50px; /* Height of the button */
-  display: flex;
-  align-items: center; /* Center icon vertically */
-  justify-content: center; /* Center icon horizontally */
-  font-size: 24px; /* Icon size */
-  text-decoration: none; /* Remove underline */
+.big-button:hover {
+  background: linear-gradient(90deg, #1a2238 0%, #283655 100%);
+  color: #b98e18;
+  box-shadow: 0 4px 18px rgba(20,30,50,0.18);
+}
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
   transition: background-color 0.3s ease; /* Smooth transition */
 }

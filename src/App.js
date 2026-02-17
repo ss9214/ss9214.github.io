@@ -2,7 +2,7 @@ import { useState } from 'react';
 import React from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import './App.css';
-import { AnimatedBackground } from 'animated-backgrounds';
+
 
 function App() {
   const [selectedSection, setSelectedSection] = useState(null);
@@ -241,10 +241,7 @@ function App() {
 
   return (
     <div className="App">
-      <AnimatedBackground 
-        animationName="fireflies"
-        blendMode="normal"
-      />
+
       <header className="portfolio-header">
         <div className="social-links-container">
           <div className="social-links-left">
